@@ -1,3 +1,4 @@
-lib
-mod
-obj
+lib/
+mod/
+obj/
+demo_tools.f90
