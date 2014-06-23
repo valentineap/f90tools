@@ -8,7 +8,7 @@ FLAGS=-J$(MOD) -Ofast -fPIC
 F95COMPILE=gfortran -c $(FLAGS) -Wall
 F95LINK=gfortran $(FLAGS)
 
-.PHONY: all mod_types mod_log mod_ndk mod_foptparse
+.PHONY: all mod_log mod_types mod_ndk mod_foptparse
 
 all: lib demo_tools
 
@@ -39,8 +39,8 @@ $(OBJ)/mod_foptparse.o: mod_foptparse.f90
 	$(F95COMPILE) -o $@ $+
 
 $(LIB)/libf90tools.a: \
-		$(OBJ)/mod_types.o \
 		$(OBJ)/mod_log.o \
+		$(OBJ)/mod_types.o \
 		$(OBJ)/mod_foptparse.o \
 		$(OBJ)/mod_ndk.o
 	libtool -static -o $@ $+
