@@ -43,4 +43,4 @@ $(LIB)/libf90tools.a: \
 		$(OBJ)/mod_types.o \
 		$(OBJ)/mod_foptparse.o \
 		$(OBJ)/mod_ndk.o
-	libtool -static -o $@ $+
+	ar -rcs $@ $+
