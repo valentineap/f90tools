@@ -14,13 +14,23 @@ module mod_types
   private
 
   public :: k_i0,k_rs,k_rd,date,julian_date,location,moment_tensor,assignment(=),operator(+),operator(-)
-
+  public :: pi, twopi, sqrt2, euler, pi_d, twopi_d, fourpi_d, bigg
 
 
   integer,parameter :: k_i0=kind(1)
   integer,parameter :: k_rs=kind(1.0)  ! single precision
   integer,parameter :: k_rd=kind(1.d0) ! double precision
 
+  ! Numerical constants (based on Numerical Recipes via DA-A)
+  real(k_rs), parameter :: pi=3.141592653589793238462643383279502884197_k_rs
+  real(k_rs), parameter :: twopi=6.283185307179586476925286766559005768394_k_rs
+  real(k_rs), parameter :: sqrt2=1.41421356237309504880168872420969807856967_k_rs
+  real(k_rs), parameter :: euler=0.5772156649015328606065120900824024310422_k_rs
+  real(k_rd), parameter :: pi_d=3.141592653589793238462643383279502884197_k_rd
+  real(k_rd), parameter :: twopi_d=6.283185307179586476925286766559005768394_k_rd
+  real(k_rd), parameter :: fourpi_d=12.56637061_k_rd
+  real(k_rd), parameter :: bigg=6.6723e-11_k_rd ! this was changed from 6.673e-11_k_rd
+  !real(k_rd), parameter :: bigg=6.6723e-21_k_rd ! this was changed from 6.673e-11_k_rd
 
   type date
     sequence
