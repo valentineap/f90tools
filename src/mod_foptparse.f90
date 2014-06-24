@@ -192,7 +192,7 @@ contains
     if(nopt.le.1) return ! No point in checking
     do iopt=1,nopt-1
       do jopt=iopt+1,nopt
-        if(options(iopt)%shortform.eq.options(jopt)%shortform) then
+        if(options(iopt)%shortform.ne.' '.and.options(iopt)%shortform.eq.options(jopt)%shortform) then
           call info('mod_foptparse','fopt_check_options', &
                   "Warning: Duplicate short form option '-"//trim(options(iopt)%shortform)//"'.",INFO_HI)
           stopping=.true.
