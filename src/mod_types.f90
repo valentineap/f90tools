@@ -34,18 +34,18 @@ module mod_types
 
 
   ! integer indices for the mode programs
-  integer, parameter :: RADIAL_MODE_INDEX           = 1
-  integer, parameter :: SPHEROIDAL_MODE_INDEX       = 2
-  integer, parameter :: TOROIDAL_MODE_INDEX         = 3
-  integer, parameter :: SOLID_REGION_INDEX          = 1
-  integer, parameter :: FLUID_REGION_INDEX          = 2
-  integer, parameter :: SELF_GRAVITATION_INDEX      = 1
-  integer, parameter :: COWLING_APPROXIMATION_INDEX = 2
-  integer, parameter :: NO_GRAVITATION_INDEX        = 3
-  integer, parameter :: NO_ATTENUATION_INDEX        = 1
-  integer, parameter :: LOG_DISPERSION_INDEX        = 2
-  integer, parameter :: NO_COUNTING_INDEX           = 1
-  integer, parameter :: DO_COUNTING_INDEX           = 1
+  integer, parameter, public :: RADIAL_MODE_INDEX           = 1
+  integer, parameter, public  :: SPHEROIDAL_MODE_INDEX       = 2
+  integer, parameter, public  :: TOROIDAL_MODE_INDEX         = 3
+  integer, parameter, public  :: SOLID_REGION_INDEX          = 1
+  integer, parameter, public  :: FLUID_REGION_INDEX          = 2
+  integer, parameter, public  :: SELF_GRAVITATION_INDEX      = 1
+  integer, parameter, public  :: COWLING_APPROXIMATION_INDEX = 2
+  integer, parameter, public  :: NO_GRAVITATION_INDEX        = 3
+  integer, parameter, public  :: NO_ATTENUATION_INDEX        = 1
+  integer, parameter, public  :: LOG_DISPERSION_INDEX        = 2
+  integer, parameter, public  :: NO_COUNTING_INDEX           = 1
+  integer, parameter, public  :: DO_COUNTING_INDEX           = 2
 
   type date
     sequence
