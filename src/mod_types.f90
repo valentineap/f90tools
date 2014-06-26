@@ -45,7 +45,9 @@ module mod_types
   integer, parameter, public  :: NO_ATTENUATION_INDEX        = 1
   integer, parameter, public  :: LOG_DISPERSION_INDEX        = 2
   integer, parameter, public  :: NO_COUNTING_INDEX           = 1
-  integer, parameter, public  :: DO_COUNTING_INDEX           = 2
+  integer, parameter, public  :: NO_COUNTING_WRITE_INDEX     = 2
+  integer, parameter, public  :: DO_COUNTING_INDEX           = 3
+  integer, parameter, public  :: DO_COUNTING_WRITE_INDEX     = 4
 
   integer, parameter, public  :: MODE_TYPE_SPHEROIDAL        = 1
   integer, parameter, public  :: MODE_TYPE_TOROIDAL          = 2
