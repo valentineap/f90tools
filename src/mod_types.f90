@@ -47,10 +47,9 @@ module mod_types
   integer, parameter, public  :: NO_COUNTING_INDEX           = 1
   integer, parameter, public  :: DO_COUNTING_INDEX           = 2
 
-  integer, parameter, public  :: MODE_TYPE_RADIAL            = 1
-  integer, parameter, public  :: MODE_TYPE_SPHEROIDAL        = 2
-  integer, parameter, public  :: MODE_TYPE_TOROIDAL          = 3
-  integer, parameter, public  :: MODE_TYPE_IC_TOROIDAL       = 4
+  integer, parameter, public  :: MODE_TYPE_SPHEROIDAL        = 1
+  integer, parameter, public  :: MODE_TYPE_TOROIDAL          = 2
+  integer, parameter, public  :: MODE_TYPE_IC_TOROIDAL       = 3
 
 
   type date
