@@ -23,7 +23,8 @@ public::fatal,info,create_logfile,close_logfile,set_verbose
   !
   ! Public functions:
   ! - create_logfile(lu,file,header)
-  !    - lu                - integer          - 'unit number' for file
+  !    - lu                - integer          - 'unit number' for file. This is a *return* value; function will
+  !                                             automagically select an available unit.
   !    - file              - character(len=*) - name of file to create
   !    - header (optional) - character(len=*) - Message to print at beginning of file (Default: "")
   !   Opens log file, writes initial timestamp, writes header if provided, and writes additional information
@@ -102,13 +103,13 @@ contains
   end subroutine timestamp
 
   subroutine create_logfile(lu,file,header)
-    integer,intent(in)::lu
+    integer,intent(out)::lu
     character(len=*),intent(in)::file
     character(len=*),intent(in),optional::header
     character(len=240)::line
     integer::lline
     character(len=20)::fmt
-    open(lu,file=file)
+    open(newunit=lu,file=file)
     LULOG=lu
     if(present(header)) write(LULOG,*) header
     call timestamp()
