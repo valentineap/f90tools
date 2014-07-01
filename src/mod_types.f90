@@ -52,6 +52,7 @@ module mod_types
   integer, parameter, public  :: MODE_TYPE_SPHEROIDAL        = 1
   integer, parameter, public  :: MODE_TYPE_TOROIDAL          = 2
   integer, parameter, public  :: MODE_TYPE_IC_TOROIDAL       = 3
+  integer, parameter, public  :: N_MODE_TYPES=3
 
   character(len=1),dimension(3),parameter,public::mode_abbrev=(/'S','T','C'/)
 
