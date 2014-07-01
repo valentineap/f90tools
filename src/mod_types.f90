@@ -33,29 +33,6 @@ module mod_types
   !real(k_rd), parameter :: bigg=6.6723e-21_k_rd ! this was changed from 6.673e-11_k_rd
 
 
-  ! integer indices for the mode programs
-  integer, parameter, public :: RADIAL_MODE_INDEX           = 1
-  integer, parameter, public  :: SPHEROIDAL_MODE_INDEX       = 2
-  integer, parameter, public  :: TOROIDAL_MODE_INDEX         = 3
-  integer, parameter, public  :: SOLID_REGION_INDEX          = 1
-  integer, parameter, public  :: FLUID_REGION_INDEX          = 2
-  integer, parameter, public  :: SELF_GRAVITATION_INDEX      = 1
-  integer, parameter, public  :: COWLING_APPROXIMATION_INDEX = 2
-  integer, parameter, public  :: NO_GRAVITATION_INDEX        = 3
-  integer, parameter, public  :: NO_ATTENUATION_INDEX        = 1
-  integer, parameter, public  :: LOG_DISPERSION_INDEX        = 2
-  integer, parameter, public  :: NO_COUNTING_INDEX           = 1
-  integer, parameter, public  :: NO_COUNTING_WRITE_INDEX     = 2
-  integer, parameter, public  :: DO_COUNTING_INDEX           = 3
-  integer, parameter, public  :: DO_COUNTING_WRITE_INDEX     = 4
-
-  integer, parameter, public  :: MODE_TYPE_SPHEROIDAL        = 1
-  integer, parameter, public  :: MODE_TYPE_TOROIDAL          = 2
-  integer, parameter, public  :: MODE_TYPE_IC_TOROIDAL       = 3
-  integer, parameter, public  :: N_MODE_TYPES=3
-
-  character(len=1),dimension(3),parameter,public::mode_abbrev=(/'S','T','C'/)
-
   type date
     sequence
     integer(k_i0) :: year
