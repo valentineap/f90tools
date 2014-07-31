@@ -340,7 +340,7 @@ contains
           ! Need to parse option of form --opt=val.
           ichar=3
           findeq:do !Find index of '=' in workcmd
-            if((workcmd(ichar:ichar).eq.'=').or.ichar.gt.OPT_LEN_LONGFORM) exit findeq
+            if((workcmd(ichar:ichar).eq.'=').or.ichar.gt.OPT_LEN_LONGFORM+2) exit findeq
             ichar=ichar+1
           end do findeq
           workcmdval=workcmd(ichar+1:) !workcmdval contains substring of workcmd after '='
