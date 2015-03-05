@@ -81,7 +81,7 @@ module mod_ndk
   integer:: iline
 contains
   subroutine ndkopen(lundk,ndkfile)
-    integer,intent(in)::lundk
+    integer,intent(inout)::lundk
     character(len=*),intent(in),optional::ndkfile
     integer::ifail,lndk
     character(len=160)::nndkfile,emsg
@@ -99,7 +99,12 @@ contains
       if(len(trim(nndkfile)).ne.lndk) call fatal('mod_nkd','ndkopen', &
             "Internal buffer 'nndkfile' too small: Unable to handle filename "//trim(ndkfile))
     end if
-    open(lundk,file=trim(nndkfile),status='old',iostat=ifail,iomsg=emsg)
+    if(lundk.eq.0) then
+      ! Try and get an unused unit number
+      open(newunit=lundk,file=trim(nndkfile),status='old',iostat=ifail,iomsg=emsg)
+    else
+      open(lundk,file=trim(nndkfile),status='old',iostat=ifail,iomsg=emsg)
+    end if
     iline=1 ! Line number that will be read next.
     if(ifail.eq.0) then
       call info("mod_ndk","ndkopen","Successfully opened ndk file at: '"//trim(nndkfile)//"'.",INFO_LO)
