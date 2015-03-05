@@ -13,7 +13,7 @@ program demo_tools
   integer, parameter :: NOPTIONS=OPT_HELP
   type(fopt_opt),dimension(NOPTIONS)::option
 
-  integer::nargs,iarg,status
+  integer::nargs,iarg,status,lu
   character(len=OPT_LEN_CHARVAL),dimension(:),allocatable::args
 
   type(ndkrec)::record
@@ -31,7 +31,8 @@ program demo_tools
   call fopt_parse(NOPTIONS,option,args,nargs,6,"Usage: demo_tools [options] CMT1 CMT2 ...","")
 
   if(option(OPT_LOGFILE)%encountered) then
-    call create_logfile(7,option(OPT_LOGFILE)%charval)
+     lu = 7
+    call create_logfile(lu,option(OPT_LOGFILE)%charval)
     logging=.true.
   end if
 
