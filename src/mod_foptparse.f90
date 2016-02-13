@@ -10,7 +10,7 @@ module mod_foptparse
   use mod_log
   implicit none
   private
-  public::fopt_setup_option, fopt_parse
+  public::fopt_setup_option, fopt_parse,fopt_write_help
 
   ! Basic usage:
   !
@@ -192,7 +192,7 @@ contains
     if(nopt.le.1) return ! No point in checking
     do iopt=1,nopt-1
       do jopt=iopt+1,nopt
-        if(options(iopt)%shortform.eq.options(jopt)%shortform) then
+        if(options(iopt)%shortform.ne.' '.and.options(iopt)%shortform.eq.options(jopt)%shortform) then
           call info('mod_foptparse','fopt_check_options', &
                   "Warning: Duplicate short form option '-"//trim(options(iopt)%shortform)//"'.",INFO_HI)
           stopping=.true.
@@ -340,7 +340,7 @@ contains
           ! Need to parse option of form --opt=val.
           ichar=3
           findeq:do !Find index of '=' in workcmd
-            if((workcmd(ichar:ichar).eq.'=').or.ichar.gt.OPT_LEN_LONGFORM) exit findeq
+            if((workcmd(ichar:ichar).eq.'=').or.ichar.gt.OPT_LEN_LONGFORM+2) exit findeq
             ichar=ichar+1
           end do findeq
           workcmdval=workcmd(ichar+1:) !workcmdval contains substring of workcmd after '='
