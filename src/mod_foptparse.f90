@@ -10,7 +10,7 @@ module mod_foptparse
   use mod_log
   implicit none
   private
-  public::fopt_setup_option, fopt_parse
+  public::fopt_setup_option, fopt_parse,fopt_write_help
 
   ! Basic usage:
   !
