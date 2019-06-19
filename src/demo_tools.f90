@@ -13,11 +13,10 @@ program demo_tools
   integer, parameter :: NOPTIONS=OPT_HELP
   type(fopt_opt),dimension(NOPTIONS)::option
 
-  integer::nargs,iarg,status,lu
+  integer::nargs,iarg,status,lu,lundk
   character(len=OPT_LEN_CHARVAL),dimension(:),allocatable::args
 
   type(ndkrec)::record
-
   logical::logging
 
   ! Set up option parser
@@ -41,8 +40,8 @@ program demo_tools
   else
     call set_verbose(.false.) ! Strictly unnecessary
   end if
-
-  call ndkopen(8,option(OPT_NDKFILE)%charval)
+  lundk=8
+  call ndkopen(lundk,option(OPT_NDKFILE)%charval)
 
   if(nargs.eq.0) then
     call fatal("","main","No events given!")
